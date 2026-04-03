@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Information</title>
+</head>
+<body style="background-image: url('{{ bg_image }}'); background-size: cover; background-repeat: no-repeat;">
+<center>
+    <font color="black" size="4" style="font-family: avenir">
+        <h1 style="color: DodgerBlue">Employee Database - {{ app_author }}</h1>
+        <h2>Employee Information</h2>
+
+        <p><b>Employee ID:</b> {{ id }}</p>
+        <p><b>First Name:</b> {{ fname }}</p>
+        <p><b>Last Name:</b> {{ lname }}</p>
+        <p><b>Primary Skills:</b> {{ interest }}</p>
+        <p><b>Location:</b> {{ location }}</p>
+
+        <br><br><a href="/">Back to Home</a>
+    </font>
+</center>
+</body>
+</html>
