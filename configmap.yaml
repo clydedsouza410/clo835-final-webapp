@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: clo835-app-config
+  namespace: default
+data:
+  APP_AUTHOR: "Clyde Dsouza"
+  BG_IMAGE_BUCKET: "clyde-clo835-final-bg-12345"
+  BG_IMAGE_KEY: "ptc_image.png"
+  BG_IMAGE_LOCAL_DIR: "static/images"
+  BG_IMAGE_LOCAL_NAME: "background.png"
+  DBHOST: "mysql"
+  DBPORT: "3306"
+  DATABASE: "employees"
