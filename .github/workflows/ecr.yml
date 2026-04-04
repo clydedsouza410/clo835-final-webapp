@@ -24,10 +24,13 @@ jobs:
           echo "[default]" > ~/.aws/config
           echo "region=${{ secrets.AWS_REGION }}" >> ~/.aws/config
 
-      - name: Show repository files
+      - name: Show all repository files
         run: |
-          echo "Listing repository files:"
-          ls -R
+          echo "Root files:"
+          ls -la
+          echo ""
+          echo "Recursive file listing:"
+          find . -type f | sort
 
       - name: Login to Amazon ECR
         run: |
