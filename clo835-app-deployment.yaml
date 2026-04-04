@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clo835-app
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: clo835-app
+  template:
+    metadata:
+      labels:
+        app: clo835-app
+    spec:
+      serviceAccountName: clo835
+      containers:
+      - name: clo835-container
+        image: 730335503185.dkr.ecr.us-east-1.amazonaws.com/clo835-final-webapp:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 81
+          protocol: TCP
+        envFrom:
+        - configMapRef:
+            name: clo835-app-config
+        - secretRef:
+            name: clo835-db-secret
+        env:
+        - name: AWS_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              name: aws-creds
+              key: AWS_ACCESS_KEY_ID
+        - name: AWS_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: aws-creds
+              key: AWS_SECRET_ACCESS_KEY
+        - name: AWS_SESSION_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: aws-creds
+              key: AWS_SESSION_TOKEN
+        - name: AWS_DEFAULT_REGION
+          valueFrom:
+            secretKeyRef:
+              name: aws-creds
+              key: AWS_DEFAULT_REGION
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "250m"
+            memory: "256Mi"
