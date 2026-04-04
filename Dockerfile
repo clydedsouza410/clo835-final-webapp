@@ -1,14 +1,13 @@
-FROM python:3.10-slim
-
+FROM ubuntu:20.04
+RUN apt-get update -y
+COPY . /app
 WORKDIR /app
-
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
-COPY . .
-
-RUN mkdir -p /app/static/images
-
-EXPOSE 81
-
-CMD ["python", "app.py"]
+RUN set -xe \
+    && apt-get update -y \
+    && apt-get install -y python3-pip \
+    && apt-get install -y mysql-client 
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+EXPOSE 8080
+ENTRYPOINT [ "python3" ]
+CMD [ "app.py" ]
