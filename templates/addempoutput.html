@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Employee Added</title>
+    <title>Add Emp Output</title>
 </head>
-<body style="background-image: url('{{ bg_image }}'); background-size: cover; background-repeat: no-repeat;">
+
+<body style="background-image: url('{{ bg_image }}'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+
 <center>
-    <font color="black" size="4" style="font-family: avenir">
-        <h1 style="color: DodgerBlue">Employee Database - {{ app_author }}</h1>
-        <h2>Employee Added Successfully</h2>
-        <p>The following employee has been added to the database:</p>
-        <p>{{ name }}</p>
-        <br><br><a href="/">Back to Home</a>
+    <font color="DodgerBlue" size="5">
+
+        <h1>The employee {{ name }} was successfully added</h1>
+
+        <br>
+        <a href="{{ url_for('home') }}">Back</a>
+
     </font>
 </center>
+
 </body>
 </html>
