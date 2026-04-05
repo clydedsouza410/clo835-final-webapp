@@ -3,19 +3,25 @@
 <head>
     <title>Get Employee Information</title>
 </head>
-<body style="background-image: url('{{ bg_image }}'); background-size: cover; background-repeat: no-repeat;">
+
+<body style="background-image: url('{{ bg_image }}'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+
 <center>
-    <font color="black" size="4" style="font-family: avenir">
-        <h1 style="color: DodgerBlue">Employee Database - {{ app_author }}</h1>
+    <font color="black" size="5">
 
-        <form action="/fetchdata" autocomplete="on" method="POST" enctype="multipart/form-data">
-            Employee ID:<br><input style="height:25px;font-size:14pt; color:grey;" type="number" name="emp_id" autofocus size="40"><br><br>
+        <h1 style="color: DodgerBlue">Employee Information</h1>
 
-            <button type="submit" style="background: grey; height: 45px; width: 200px; color:white;">FETCH INFO</button><br><br>
+        <form action="/fetchdata" method="POST">
+
+            Employee ID:<br>
+            <input type="number" name="emp_id"><br><br>
+
+            <button type="submit">FETCH INFO</button><br><br>
+
         </form>
 
-        <br><br><a href="/">Back to Home</a>
     </font>
 </center>
+
 </body>
 </html>
