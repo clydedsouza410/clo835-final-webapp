@@ -3,20 +3,26 @@
 <head>
     <title>Employee Information</title>
 </head>
-<body style="background-image: url('{{ bg_image }}'); background-size: cover; background-repeat: no-repeat;">
+
+<body style="background-image: url('{{ bg_image }}'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+
 <center>
-    <font color="black" size="4" style="font-family: avenir">
-        <h1 style="color: DodgerBlue">Employee Database - {{ app_author }}</h1>
-        <h2>Employee Information</h2>
+    <font color="black" size="5">
 
-        <p><b>Employee ID:</b> {{ id }}</p>
-        <p><b>First Name:</b> {{ fname }}</p>
-        <p><b>Last Name:</b> {{ lname }}</p>
-        <p><b>Primary Skills:</b> {{ interest }}</p>
-        <p><b>Location:</b> {{ location }}</p>
+        <h1 style="color: DodgerBlue">Employee Information</h1>
 
-        <br><br><a href="/">Back to Home</a>
+        <div>
+            Employee ID: {{ id }} <br><br>
+            First Name: {{ fname }} <br><br>
+            Last Name: {{ lname }} <br><br>
+            Primary Skill: {{ interest }} <br><br>
+            Location: {{ location }} <br><br>
+        </div>
+
+        <a href="{{ url_for('home') }}">Back</a>
+
     </font>
 </center>
+
 </body>
 </html>
